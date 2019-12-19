@@ -23,8 +23,8 @@ import com.viewnext.apiusuarios.model.AlmacenDAOTemasDeUsuarios;
 import com.viewnext.apiusuarios.model.AlmacenDAOUsuarios;
 
 @RestController()
-@RequestMapping("/api/usuarios")
-public class UsuariosController {
+@RequestMapping("/api/json/usuarios")
+public class UsuariosJsonController {
 
 	// Inyeccion de dependencias: Spring se encarga de instanciar el DAO (obj, no interfaz) y asignarlo a nuestro Restcontroller
 	@Autowired 
