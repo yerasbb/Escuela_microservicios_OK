@@ -18,6 +18,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -39,7 +40,7 @@ public class Tema {
 	@OneToMany(fetch = FetchType.EAGER)//Forma de recuperar LAZY: perezosa ( a petición), EAGER : rápida, al hacer la consulta
 	@JoinColumn(name = "id_tema_preferido")
 	@JsonIgnore
-	private Set<Usuario> UsuariosPref;
+	private Set<Usuario> usuariosPref;
 
 	@Column(name = "timestamp", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -88,11 +89,11 @@ public class Tema {
 	}
 
 	public Set<Usuario> getUsuariosPref() {
-		return UsuariosPref;
+		return usuariosPref;
 	}
 
 	public void setUsuariosPref(Set<Usuario> usuariosPref) {
-		UsuariosPref = usuariosPref;
+		usuariosPref = usuariosPref;
 	}
 
 }

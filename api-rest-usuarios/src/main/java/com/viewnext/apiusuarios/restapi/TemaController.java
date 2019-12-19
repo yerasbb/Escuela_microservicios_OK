@@ -18,7 +18,7 @@ import com.viewnext.apiusuarios.entidades.Tema;
 import com.viewnext.apiusuarios.model.AlmacenDAOTemas;
 
 @RestController()
-@RequestMapping("/api/tema")
+@RequestMapping("/api/temas")
 public class TemaController {
 
 	// Inyeccion de dependencias: Spring se encarga de instanciar el DAO (obj, no interfaz) y asignarlo a nuestro Restcontroller
@@ -50,9 +50,19 @@ public class TemaController {
 		return dao.save(tema);
 	}
 	
+	
+	
 	@GetMapping
-	public List<Tema> leerTodos() {
-		return dao.findAll();
+	public List<Tema> leerTodos(@RequestParam (name= "usuario", required = false) Integer idUsuario) {
+		
+		List<Tema> temas;
+		
+		if(idUsuario == null) {
+			temas = dao.findAll();
+		} else {
+			temas = dao.findTemasPorUsuario(idUsuario);
+		}
+		return temas;
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
