@@ -8,5 +8,23 @@ export class UsuariosService {
 
   listaUsuario: Usuario[];
   
-  constructor() { }
+  constructor() { 
+
+    this.listaUsuario = [{
+       id:1,
+       nombre:"PAko", 
+       email: "pak@em.com", 
+       password: "123", 
+       idTemaPreferido: 1},
+       {id:2,
+        nombre:"Fernando", 
+        email: "Fer@em.com", 
+        password: "123", 
+        idTemaPreferido: 2}];
+
+  }
+
+  public getTodosUsuarios(): Usuario[]{
+    return this.listaUsuario;
+  }
 }

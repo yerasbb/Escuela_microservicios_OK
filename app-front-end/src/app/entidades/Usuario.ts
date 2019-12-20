@@ -1,7 +1,7 @@
 export class Usuario{
-    private id: number;
-    private nombre: string;
-    private email: string;
-    private password: string;
-    private temaPreferido: number;
+    public id: number;
+    public nombre: string;
+    public email: string;
+    public password: string;
+    public idTemaPreferido: number;
 }
