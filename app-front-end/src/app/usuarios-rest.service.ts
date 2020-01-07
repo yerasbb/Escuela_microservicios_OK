@@ -27,5 +27,32 @@ export class UsuariosRestService {
     
   }
 
+  getUsuario(id: number): Observable<Usuario>{
+
+    let observableHttp =  this.clienteHttp.get<Usuario>(`${this.url}/${id}`);
+    return observableHttp;
+     
+   }
+
+  registro(usuario: Usuario): Observable<Usuario>{
+    let observableHttp = this.clienteHttp.post<Usuario>(this.url,usuario);
+
+    return observableHttp;
+  }
+
+  delete(id: number): Observable<any>{
+
+    let observableHttp = this.clienteHttp.delete<any>(`${this.url}/${id}`);
+
+    return observableHttp;
+  }
+
+  modify(usuario: Usuario): Observable<Usuario>{
+
+    let observableHttp = this.clienteHttp.put<Usuario>(`${this.url}/${usuario.id}`, usuario);
+
+    return observableHttp;
+  }
+
   
 }

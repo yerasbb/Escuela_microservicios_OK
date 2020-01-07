@@ -5,6 +5,33 @@
     * directiva estructural (*ngFor, *ngIF...) -->
     <li *ngFor="let usu of listaUsu">
         <label>Datos: </label> {{usu.id + ", " + usu.nombre + " - " +usu.email}}
+        <input type="button" value="X" (click)="eliminar(usu.id)" />
+        <input type="button" value="Cargar" (click)="formVisible=true;usuModif=usu" />
+
     </li>
+
+    <div *ngIf="formVisible">
+
+        <p>
+            <label>Nombre: </label>&nbsp;
+            <!--Double-Data-Binding "["" para recibir y "("" para enviar-->
+            <input type="text" [(ngModel)]="usuModif.nombre" value="" />
+            <br>
+            <label>Email: </label>&nbsp;
+            <!--Double-Data-Binding-->
+            <input type="email" [(ngModel)]="usuModif.email" />
+            <br>
+            <label>Password: </label>&nbsp;
+            <!--Double-Data-Binding-->
+            <input type="password" [(ngModel)]="usuModif.password" />
+            <br>
+            <label>Tema preferido: </label>&nbsp;
+            <!--Double-Data-Binding-->
+            <input type="text" [(ngModel)]="usuModif.idTemaPreferido" />
+            <br>
+        </p>
+        <input type="button" value="Modificar" (click)="modificar(usuModif)" />
+        <input type="button" value="Cerrar" (click)="formVisible=false" />
+    </div>
 
 </ul>

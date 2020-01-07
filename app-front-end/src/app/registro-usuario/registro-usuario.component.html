@@ -1,6 +1,35 @@
-<p>registro-usuario works!</p>
-{{variable}} {{variable}}
+<!--Convertir este componente en un formulario de registro:
+1 - Construir el formulario
+2 - Un botón para invocar al método del comp
+3 - Preparamos el dato que vamos a enviar
+4 - El método tiene que avisar al Servicio Cliente REST mediante POST
+5 - Recoger los datos del usuario y mostrarlos (en especial el ID recibido)-->
 
-<input type="text" [(ngModel)]="variable" />
 
-<input type="button" value="Boton" (click)="pulsar()" />
+<p>Formulario de registro</p>
+
+<!--Simple-Data-Binding-->
+<!--{{variable}} {{variable}}-->
+
+<p>
+    <label>Nombre: </label>&nbsp;
+    <!--Double-Data-Binding "["" para recibir y "("" para enviar-->
+    <input type="text" [(ngModel)]="nombre" value="Nombre Por Defecto" />
+    <br>
+    <label>Email: </label>&nbsp;
+    <!--Double-Data-Binding-->
+    <input type="email" [(ngModel)]="email" value="Email Por Defecto" />
+    <br>
+    <label>Password: </label>&nbsp;
+    <!--Double-Data-Binding-->
+    <input type="password" [(ngModel)]="password" value="Password Por Defecto" />
+    <br>
+    <label>Tema preferido: </label>&nbsp;
+    <!--Double-Data-Binding-->
+    <input type="text" [(ngModel)]="idTemaPreferido" value="idTemaPreferido Por Defecto" />
+    <br>
+</p>
+
+<input type="button" value="Enviar" (click)="enviar()" />
+<div *ngIf="!estaRegistrado">Aún no se ha registrado</div>
+<div *ngIf="estaRegistrado">Se ha registrado correctamente con ID: {{usuario.id}}</div>

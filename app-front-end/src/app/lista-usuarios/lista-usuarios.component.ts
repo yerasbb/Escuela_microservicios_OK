@@ -13,7 +13,9 @@ import { Observable } from 'rxjs';
 export class ListaUsuariosComponent implements OnInit{
 
   listaUsu: Usuario[];
+  usuario: Usuario;
   public srvUsu: UsuariosRestService;
+  id: number;
 
   
   //Como Usuariosservice es @Injectable, Angular lo instancia y lo pasa 
@@ -33,6 +35,24 @@ export class ListaUsuariosComponent implements OnInit{
     //invoque a esta función callback
     obserConDatos.subscribe(datos => this.listaUsu = datos);
 
+  }
+
+  eliminar(id: number){
+
+    this.id = id;
+
+    //El delete no devuelve datos
+    this.srvUsu.delete(this.id).subscribe(() => {alert(`Usuario con id ${id} eliminado`);
+    this.ngOnInit();});
+   
+
+  }
+
+  modificar(usuario: Usuario){
+    // var win = window.open('app-registro-usuario', '_blank');
+    this.srvUsu.modify(usuario).subscribe(() => { alert(`Usuario con id ${usuario.id} modificado`);
+    this.ngOnInit();});
+    // win.focus();
   }
 
 }

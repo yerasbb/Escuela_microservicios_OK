@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { FormularioModComponent } from './formulario-mod/formulario-mod.component';
 
 
 
@@ -13,7 +14,8 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
   declarations: [
     AppComponent,
     ListaUsuariosComponent,
-    RegistroUsuarioComponent //Los servicios por defecto son Singleton
+    RegistroUsuarioComponent,
+    FormularioModComponent //Los servicios por defecto son Singleton
   ],
   imports: [
     BrowserModule,

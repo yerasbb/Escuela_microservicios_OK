@@ -25,12 +25,13 @@ import com.viewnext.apiusuarios.model.AlmacenDAOUsuarios;
 
 @RestController()
 @RequestMapping("/api/json/usuarios")
-@CrossOrigin()
+@CrossOrigin(origins="*")
 public class UsuariosJsonController {
 
 	// Inyeccion de dependencias: Spring se encarga de instanciar el DAO (obj, no interfaz) y asignarlo a nuestro Restcontroller
 	@Autowired 
 	private AlmacenDAOUsuarios dao;
+
 	
 	@Autowired
 	private AlmacenDAOTemasDeUsuarios daoTemasUsu;
@@ -46,6 +47,7 @@ public class UsuariosJsonController {
 	@DeleteMapping(value = "/{id}")
 	public void borrarUsuario(@PathVariable Integer id) {
 		
+		daoTemasUsu.DeleteTemasDeUnUsuario(id);
 		dao.deleteById(id);
 	}
 	
