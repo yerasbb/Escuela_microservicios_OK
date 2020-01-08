@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 
 
 @Component({
-    selector: 'app-comp-raiz',
-    template: '<h2>Aquí estoy</h2>'
+    selector: 'app-comp-a',
+    template: '<h2>Aquí estoy A</h2>'
 })
 
-export /*equivalente a public*/ class AppComponente {
+export /*equivalente a public*/ class AppComponenteA {
 
     contador = 0;
     
