@@ -35,7 +35,7 @@ export class RegistroUsuarioComponent implements OnInit {
     this.usuario = usuRecibido;
     this.estaRegistrado = (typeof this.usuario.id !== undefined);
   });
-    //Falta terminar de rellenar el objeto e invocar al servicio con los datos.
+    
   }
 
 }

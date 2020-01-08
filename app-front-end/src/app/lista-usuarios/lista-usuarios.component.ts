@@ -14,6 +14,7 @@ export class ListaUsuariosComponent implements OnInit{
 
   listaUsu: Usuario[];
   usuario: Usuario;
+  usuarioModif: Usuario;
   public srvUsu: UsuariosRestService;
   id: number;
 
@@ -25,6 +26,7 @@ export class ListaUsuariosComponent implements OnInit{
   constructor(srvUsu: UsuariosRestService) {
     
     this.srvUsu = srvUsu;
+
 
 
   }

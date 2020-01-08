@@ -6,6 +6,7 @@
     <li *ngFor="let usu of listaUsu">
         <label>Datos: </label> {{usu.id + ", " + usu.nombre + " - " +usu.email}}
         <input type="button" value="X" (click)="eliminar(usu.id)" />
+        <!--TODO Meter el new Usuario en nun metodo -->
         <input type="button" value="Cargar" (click)="formVisible=true;usuModif=usu" />
 
     </li>
