@@ -52,7 +52,7 @@ export class ListaUsuariosComponent implements OnInit{
 
   modificar(usuario: Usuario){
     // var win = window.open('app-registro-usuario', '_blank');
-    this.srvUsu.modify(usuario).subscribe(() => { alert(`Usuario con id ${usuario.id} modificado`);
+    this.srvUsu.modify(usuario).subscribe(() => { alert(`Usuario con id ${this.usuario.id} modificado`);
     this.ngOnInit();});
     // win.focus();
   }
