@@ -13,6 +13,7 @@ export class UsuariosRestService {
 
   /*url = "http://172.16.2.12:8081/api/usuarios"*/
   url = "http://localhost:8081/api/json/usuarios"
+  urlBase = "http://localhost:8081"
   
   listaUsuario: Usuario[];
   public srvAlm: AlmacenLocalService;
@@ -55,4 +56,11 @@ export class UsuariosRestService {
   }
 
   
+autenticar(usuario: Usuario, callback) {
+  const cabeceras = new HttpHeaders(usuario ?{
+    authorization: 'Basic' + btoa(usuario.nombre + ":" + usuario.password)
+  }:{});
+
+  this.clienteHttp.get(urlBase)
+
 }

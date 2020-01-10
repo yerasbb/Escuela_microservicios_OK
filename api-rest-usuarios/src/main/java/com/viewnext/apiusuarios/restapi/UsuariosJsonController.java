@@ -69,7 +69,8 @@ public class UsuariosJsonController {
 		Optional <Usuario> usu = dao.findById(id);
 		return usu.orElse(null);
 	}
-
+	
+	
 	@PostMapping(value="/formulario")
 	public Usuario crearUsuarioPorParam(@RequestParam (name="nombre")String name, @RequestParam String email, @RequestParam String password) {
 		

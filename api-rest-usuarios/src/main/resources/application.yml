@@ -15,3 +15,10 @@ spring:
 
 # Cuando hay cambios, elimina la tabla y datos, y la vuelve a crear
 # spring.jpa.hibernate.ddl-auto=create
+
+# Configuración Spring Security, usuario y password básicos.
+
+  #security:
+  #  user:
+      #name: admin
+      #password: 123

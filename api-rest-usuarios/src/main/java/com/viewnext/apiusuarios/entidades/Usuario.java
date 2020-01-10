@@ -28,11 +28,11 @@ public class Usuario /*implements Serializable*/ {
 	
 	@NotNull
 	@Size(min = 3, max = 255)
-	@Column(unique = true)
+//	@Column(unique = true)
 	@Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")
 	private String email;
 	
-	@Size(min = 2, max = 50)
+	@Size(min = 2, max = 250)
 	private String password;
 	
 	@Column(name = "timestamp", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
